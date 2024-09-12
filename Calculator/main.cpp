@@ -4,7 +4,7 @@
 
 void menuPrint() 
 {
-  std::string menu[] = 
+  const std::string menu[] = 
   {
     "1. Addition",
     "2. Subtraction",
@@ -41,7 +41,7 @@ int getArrLen()
 
   return arrLen;
 }
-// First set of calculator functions
+// Addition Methods
 void calcAddition(int arrLen) 
 {
   int arrOne[arrLen];
@@ -63,7 +63,7 @@ void calcAddition(int arrLen)
 
   for (int k = 0; k < arrLen; k++)
   {
-       std::cout << (arrOne[k] + arrTwo[k]);
+       std::cout << (arrOne[k] + arrTwo[k]) << " ";
   }
 
 }
@@ -84,6 +84,7 @@ void calcAddition()
 }
 
 // Subtraction functions
+
 void calcSubtraction(int arrLen)
 {
   int arrOne[arrLen];
@@ -105,7 +106,7 @@ void calcSubtraction(int arrLen)
 
   for (int k = 0; k < arrLen; k++)
   {
-    std::cout << (arrOne[k] - arrTwo[k]);
+    std::cout << (arrOne[k] - arrTwo[k]) << " ";
   }
 }
 
@@ -120,6 +121,133 @@ void calcSubtraction()
   std::cin >> numTwo;
 
   std::cout << (numOne - numTwo);
+}
+
+void calcMultiplication(int arrLen)
+{
+  int arrOne[arrLen];
+  int arrTwo[arrLen];
+
+  std::cout << "Enter the first array of numbers (Length is " << arrLen << ")";
+
+  for (int i = 0; i < arrLen; i++)
+  {
+    std::cin >> arrOne[i];
+  }
+  
+  std::cout << "Enter the second array of numbers (Length is " << arrLen << ")";
+
+  for (int j = 0; j < arrLen; j++)
+  {
+    std::cin >> arrTwo[j];
+  }
+
+  for (int k = 0; k < arrLen; k++)
+  {
+    std::cout << (arrOne[k] * arrTwo[k]) << " ";
+  }
+}
+
+void calcMultiplication()
+{
+  std::cout << "Enter first number:";
+  int numOne;
+  std::cin >> numOne; 
+
+  std::cout << "Enter second number:";
+  int numTwo;
+  std::cin >> numTwo;
+
+  std::cout << (numOne * numTwo);
+}
+
+void calcDivision(int arrLen)
+{
+  int arrOne[arrLen];
+  int arrTwo[arrLen];
+
+  std::cout << "Enter the first array of numbers (Length is " << arrLen << ")";
+
+  for (int i = 0; i < arrLen; i++)
+  {
+    std::cin >> arrOne[i];
+  }
+  
+  std::cout << "Enter the second array of numbers (Length is " << arrLen << ")";
+
+  for (int j = 0; j < arrLen; j++)
+  {
+    std::cin >> arrTwo[j];
+  }
+
+  for (int k = 0; k < arrLen; k++)
+  {
+    if (arrTwo[k] != 0)
+    {
+      std::cout << (arrOne[k] / arrTwo[k]) << " ";
+    }
+    else {
+     std::cout << "NaN "; 
+    }
+    
+  }
+}
+
+void calcDivision()
+{
+  std::cout << "Enter first number:";
+  int numOne;
+  std::cin >> numOne;
+
+  std::cout << "Enter second number:";
+  int numTwo;
+  std::cin >> numTwo;
+  if (numTwo != 0) 
+  {
+    std::cout << (numOne / numTwo);
+  }
+  else {
+    std::cout << "NaN!";
+  }
+ 
+}
+
+void calcModulo(int arrLen)
+{
+  int arrOne[arrLen];
+  int arrTwo[arrLen];
+
+  std::cout << "Enter the first array of numbers (Length is " << arrLen << ")";
+
+  for (int i = 0; i < arrLen; i++)
+  {
+    std::cin >> arrOne[i];
+  }
+  
+  std::cout << "Enter the second array of numbers (Length is " << arrLen << ")";
+
+  for (int j = 0; j < arrLen; j++)
+  {
+    std::cin >> arrTwo[j];
+  }
+
+  for (int k = 0; k < arrLen; k++)
+  {
+    std::cout << (arrOne[k] % arrTwo[k]);
+  }
+}
+
+void calcModulo()
+{
+  std::cout << "Enter first number:";
+  int numOne;
+  std::cin >> numOne; 
+
+  std::cout << "Enter second number:";
+  int numTwo;
+  std::cin >> numTwo;
+
+  std::cout << (numOne % numTwo);
 }
 
 
@@ -149,16 +277,16 @@ void calcStart()
           calcAddition(arrLen);
           break;
         case 2:
-          // calcSubtratcion(arrLen);
+          calcSubtraction(arrLen);
           break;
         case 3:
-          // calcMultiplication(arrLen);
+          calcMultiplication(arrLen);
           break;
         case 4:
-          // calcDivision(arrLen);
+          calcDivision(arrLen);
           break;
         case 5:
-          // calcModulo(arrLen);
+          calcModulo(arrLen);
         case 6:
           userQuit = true;
           break;
@@ -178,20 +306,19 @@ void calcStart()
       switch (userChoice)
       {
         case 1:
-          // calcAddition();
+          calcAddition();
           break;
         case 2:
-          // calcSubtratcion();
+          calcSubtraction();
           break;
         case 3:
-          // calcMultiplication();
+          calcMultiplication();
           break;
         case 4:
-          // calcDivision();
+          calcDivision();
           break;
         case 5:
-          // calcModulo();
-        case 6:
+          calcModulo();
           userQuit = true;
           break;
       };
