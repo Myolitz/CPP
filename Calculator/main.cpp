@@ -41,7 +41,7 @@ int getArrLen()
 
   return arrLen;
 }
-
+// First set of calculator functions
 void calcAddition(int arrLen) 
 {
   int arrOne[arrLen];
@@ -53,7 +53,7 @@ void calcAddition(int arrLen)
   {
     std::cin >> arrOne[i];
   }
-
+  
   std::cout << "Enter the second array of numbers (Length is " << arrLen << ")";
 
   for (int j = 0; j < arrLen; j++)
@@ -68,6 +68,60 @@ void calcAddition(int arrLen)
 
 }
   
+void calcAddition()
+{
+  std::cout << "Enter first number:";
+  int numOne;
+  std::cin >> numOne; 
+
+  std::cout << "Enter second number:";
+  int numTwo;
+  std::cin >> numTwo;
+
+  std::cout << (numOne + numTwo);
+
+
+}
+
+// Subtraction functions
+void calcSubtraction(int arrLen)
+{
+  int arrOne[arrLen];
+  int arrTwo[arrLen];
+
+  std::cout << "Enter the first array of numbers (Length is " << arrLen << ")";
+
+  for (int i = 0; i < arrLen; i++)
+  {
+    std::cin >> arrOne[i];
+  }
+  
+  std::cout << "Enter the second array of numbers (Length is " << arrLen << ")";
+
+  for (int j = 0; j < arrLen; j++)
+  {
+    std::cin >> arrTwo[j];
+  }
+
+  for (int k = 0; k < arrLen; k++)
+  {
+    std::cout << (arrOne[k] - arrTwo[k]);
+  }
+}
+
+void calcSubtraction()
+{
+  std::cout << "Enter first number:";
+  int numOne;
+  std::cin >> numOne; 
+
+  std::cout << "Enter second number:";
+  int numTwo;
+  std::cin >> numTwo;
+
+  std::cout << (numOne - numTwo);
+}
+
 
 void calcStart()
 {
@@ -155,16 +209,17 @@ void calcStart()
     
   };
 };
-
-/*void calcMenu(){*/
 /*
-/*  int userChoice = calcChoice();*/
-/*  if (userChoice == 1) {*/
-/*    int arrayLength = getArrLen();*/
-/*  }*/
-/*  menuPrint();*/
-/**/
-/*};*/
+ * void calcMenu(){
+ *
+ *  int userChoice = calcChoice();
+ *  if (userChoice == 1) {
+ *    int arrayLength = getArrLen();
+ *  }
+ *  menuPrint();
+ *
+ *};
+ */
 
 int main() 
 {
